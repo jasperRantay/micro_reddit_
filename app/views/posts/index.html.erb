@@ -1,0 +1,9 @@
+<h1 style="padding:16px 0">Articles</h1>
+
+  <% @posts.each do |post| %>
+    <div class="post_content">
+      <%= link_to post.title, post, class: "title"%>
+      <p class="post"><%= post.body%></p>
+    </div>
+  <% end %>
+
