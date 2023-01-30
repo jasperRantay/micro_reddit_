@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    http_basic_authenticate_with name: "xy", password: "per", except: [:index, :show]
+    http_basic_authenticate_with name: "xy1", password: "per1", except: [:index, :show]
 
 
   def index
