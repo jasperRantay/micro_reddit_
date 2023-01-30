@@ -4,8 +4,9 @@ class CommentsController < ApplicationController
 
    
 
-        http_basic_authenticate_with name: "xy1", password: "per1", only: :destroy
-
+        # http_basic_authenticate_with name: "xy1", password: "per1", only: :destroy
+        before_action :require_signin,  except: [:index, :show, :create]
+        #before_action :require_correct_user, only: [:edit, :update, :destroy]
 
     def create
         @post = Post.find(params[:post_id])

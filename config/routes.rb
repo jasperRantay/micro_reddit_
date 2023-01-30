@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,4 +9,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  resource :session, only: [:new, :create, :destroy]
+
+  resources :users
+  get "signup" => "users#new"
 end
