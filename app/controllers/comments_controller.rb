@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
         before_action :require_signin,  except: [:index, :show, :create]
         #before_action :require_correct_user, only: [:edit, :update, :destroy]
 
+
+
     def create
         @post = Post.find(params[:post_id])
         @comment = @post.comments.create(comment_params)

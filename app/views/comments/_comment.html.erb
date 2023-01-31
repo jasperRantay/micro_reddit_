@@ -1,7 +1,15 @@
 
 <p>
   <strong>User:</strong>
-  <%= comment.user%>
+    
+  <%= if current_user
+        comment.user 
+        elsif current_user == nil
+          comment.user 
+        else
+          current_user.name
+      end
+      %>
 </p>
 
 <p>
